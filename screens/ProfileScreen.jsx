@@ -14,7 +14,6 @@ export const ProfileScreen = ({ navigation }) => {
   const { jti, setJti } = useContext(AuthContext)
   const { userName, setUserName } = useContext(AuthContext)
   const { username } = useContext(AuthContext)
-  const { topic, setTopic } = useContext(AuthContext)
   const { avatar, setAvatar } = useContext(AuthContext)
   const { id, setId } = useContext(AuthContext)
 
@@ -61,7 +60,6 @@ export const ProfileScreen = ({ navigation }) => {
       setUserId(0)
       setId('')
       setUserName('')
-      setTopic('')
       setAvatar('')
       setId('')
       onChangeEmail('')

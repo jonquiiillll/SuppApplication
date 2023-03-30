@@ -8,7 +8,7 @@ export const SignUpState = ({children}) => {
     const [email, onChangeEmail] = React.useState('lilya@gmail.ru')
     const [username, onChangeUsername] = React.useState('')
     const [gender, onChangeGender] = React.useState('женский')
-    const [topic, onChangeTopic] = React.useState([""])
+ 
     const [tag, onChangeTag] = React.useState([])
     const [list, setList] = useState([]);
    
@@ -24,7 +24,7 @@ export const SignUpState = ({children}) => {
             list: list,
             username: username,
             gender: gender,
-            topic: topic,
+   
             avatar: avatar,
             onChangePassword,
             setList,
@@ -33,7 +33,7 @@ export const SignUpState = ({children}) => {
             onChangeEmail,
             onChangeUsername,
             onChangeGender,
-            onChangeTopic,
+      
             setAvatar
         }}
         >

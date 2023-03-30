@@ -14,10 +14,10 @@ export const PasswordScreen = ({ navigation, route }) => {
     const [userId, setUserId] = React.useState(0)
     const [userEmail, setUserEmail] = React.useState('')
     const userContext = useContext(UserState)
+    const {list, setList} = useContext(AuthContext)
   
     const {jti, setJti} = useContext(AuthContext)
     const {userName, setUserName} = useContext(AuthContext)
-    const {topic, setTopic} = useContext(AuthContext)
     const {id, setId} = useContext(AuthContext)
     const {avatar, setAvatar} = useContext(AuthContext)
   
@@ -65,9 +65,9 @@ export const PasswordScreen = ({ navigation, route }) => {
   
             if (typeof json['jti'] !== 'undefined') {
                 onChangeEmail(json.email)
+                setList(json.tag_ids)
                 onChangePassword(json.password)
                 setUserName(json.username)
-                setTopic(json.topic)
                 setId(json.id)
                 setJti(json.jti)
                 setAvatar(json.avatar)

@@ -14,14 +14,12 @@ export const LoginInState = ({children}) => {
             email: email,
             username: username,
             gender: gender,
-            topic: topic,
             avatar: avatar,
             onChangePassword,
             onChangePasswordConfirm,
             onChangeEmail,
             onChangeUsername,
             onChangeGender,
-            onChangeTopic,
             setAvatar
         }}
         >

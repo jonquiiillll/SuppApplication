@@ -16,7 +16,7 @@ export const ProblemsSelectScreen = ({ navigation }) => {
   // const {password1, onChangePassword1} = useContext(SignUpContext)
   // const {password2, onChangePassword2} = useContext(SignUpContext)
   // const {email, onChangeEmail} = useContext(SignUpContext)
-  const { topic, onChangeTopic } = useContext(SignUpContext)
+  // const { topic, onChangeTopic } = useContext(SignUpContext)
   
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState([])

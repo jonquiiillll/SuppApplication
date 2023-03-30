@@ -22,8 +22,9 @@ export const HomeScreen = ({ navigation, route }) => {
   const { jti } = useContext(AuthContext)
   const { id } = useContext(AuthContext)
   const { username } = useContext(AuthContext)
-  const { topic } = useContext(AuthContext)
+  const { list } = useContext(AuthContext)
   const { avatar } = useContext(AuthContext)
+  console.log(list)
   const info = [
     { value: 'Всё равно' },
     { value: 'Женщина' },
@@ -32,9 +33,10 @@ export const HomeScreen = ({ navigation, route }) => {
   const [data, setData] = useState([])
 
   const getData = async () => {
+    console.log('1')
     try {
       const response = await fetch(
-        authUrl + id,
+        authUrl + id, 
         {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' }
@@ -42,6 +44,7 @@ export const HomeScreen = ({ navigation, route }) => {
       )
 
       const json = await response.json()
+      console.log(json)
       setData(json.data)
       console.log(json.data)
     } catch (error) {
@@ -53,7 +56,7 @@ export const HomeScreen = ({ navigation, route }) => {
 
   useEffect(() => {
     getData()
-  }, [])
+  })
   return (
     <ViewContainer>
       <GreetingContainer>
@@ -74,9 +77,7 @@ export const HomeScreen = ({ navigation, route }) => {
           </ViewHeader>
           <ViewGreeting>
             <TextHint>Найди своего собеседника</TextHint>
-            <ButtonHint>
-              <Image source={require('../assets/que.png')} style={{ height: 21, width: 12 }} />
-            </ButtonHint>
+
           </ViewGreeting>
         </ImageBackground>
 

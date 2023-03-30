@@ -58,7 +58,7 @@ const ViewText = styled.View`
 `
 const ViewRadioButton = styled.View`
 display: flex;
-margin-top: 9px;
+margin-top: 6px;
 flex-direction: row;
 margin-left: 16px;
 margin-right: 13px;

@@ -15,7 +15,6 @@ export const SecondLoginScreen = ({navigation}) => {
     const {username, onChangeUsername} = useContext(SignUpContext)
     const {gender, onChangeGender} = useContext(SignUpContext)
     const {problem, onChangeProblem} = useContext(SignUpContext)
-    const {topic, onChangeTopic}= useContext(SignUpContext)
     const {tag, onChangeTag} = useContext(SignUpContext)
     const {avatar, setAvatar}= useContext(SignUpContext)
     const {list, setList} = useContext(SignUpContext)
@@ -27,7 +26,7 @@ export const SecondLoginScreen = ({navigation}) => {
       password_confirmation: '',
       email: '',
       username: '',
-      topic: '',
+
       tag: [''],
       token: ''
   }
@@ -44,7 +43,7 @@ export const SecondLoginScreen = ({navigation}) => {
   }
 
   const doSignUp = async () => {
-    console.log(username, gender, email, tag, list, password, topic, password_confirmation)
+    console.log(username, gender, email, tag, list, password, password_confirmation)
     // let s = "[" + list[1].toString() + "]" 
     // console.log(s)
       try {
@@ -65,10 +64,8 @@ export const SecondLoginScreen = ({navigation}) => {
                             'email': email,
                             'username': username,
                             'gender': gender,
-                            'topic': topic,
                             'tag_ids': list,
-                            'topic': topic,
-                            'avatar': avatar,
+                            'avatar': avatar
                         }
                     }
                   )

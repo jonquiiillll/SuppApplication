@@ -7,8 +7,9 @@ import { Button } from 'react-native'
 const UpdateUsername = () => {
     
     const { email } = useContext(AuthContext)
-    const { username, onChangeUsername} = useContext(AuthContext)
+    const { userName, setUserName} = useContext(AuthContext)
     const [usernameUp, onChangeUsernameUp] = React.useState('')
+
     const doUpdate = async () => {
 
           try {
@@ -38,7 +39,7 @@ const UpdateUsername = () => {
     
     
               if (typeof json['user'] !== 'undefined') {
-                  onChangeUsernameUp(json.username)
+                onChangeUsernameUp(json.username)
                   alert('You are successfully signed up as a user "' +
                         json.user.username +'"')
               } else if (typeof json['message'] !== 'undefined') {
@@ -56,8 +57,8 @@ const UpdateUsername = () => {
       <Text>UpdateUsername</Text>
       <TextInput
         onChangeText={onChangeUsernameUp}
-        value={usernameUp}
-        placeholder={username}
+       
+        placeholder='some'
     />
     </View>
     <Button onPress={doUpdate} title="Обновить"> </Button>
